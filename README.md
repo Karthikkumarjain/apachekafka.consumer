@@ -23,5 +23,5 @@ sh bin/kafka-server-start.sh config/server.properties
 docker compose up
 ~~~
 * Launch the spring boot application of publisher and send messages to topic
-* Launch the spring boot application
+* Launch the consumer application(this repo).
 * And verify in console
