@@ -43,7 +43,7 @@ class ApplicationTests {
         kafkaTemplate.send("quickstart-4", employeeDetails);
         log.info("testConsumeEvents method execution ended...");
         await().pollInterval(Duration.ofSeconds(3)).atMost(10, SECONDS).untilAsserted(() -> {
-            //Assert
+            //Assert against database or some other external API or anything(Based on business needs)
         });
     }
 

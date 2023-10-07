@@ -11,8 +11,5 @@ spring:
             trusted:
               packages: com.kk.dto
 
-
-
-
 server:
   port: 9292
