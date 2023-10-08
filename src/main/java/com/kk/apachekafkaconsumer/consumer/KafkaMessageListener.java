@@ -4,6 +4,7 @@ import com.kk.dto.EmployeeDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,6 +18,9 @@ public class KafkaMessageListener {
 
         logger.info("Consumer1 received the message {}", message);
     }
+
+
+
 
     @KafkaListener(topics = "quickstart-3" ,groupId = "group_id")
     public void consumer1(String message){
@@ -43,5 +47,11 @@ public class KafkaMessageListener {
     public void consumer4(EmployeeDetails message){
 
         logger.info("Consumer4 received the message {}", message);
+    }
+
+    @KafkaListener(topics = "quickstart-3" ,groupId = "group_id",topicPartitions = {@TopicPartition(topic = "quickstart-3",partitions = {"2"})})
+    public void consumer5(String message){
+
+        logger.info("Consumer1 received the message {}", message);
     }
 }
