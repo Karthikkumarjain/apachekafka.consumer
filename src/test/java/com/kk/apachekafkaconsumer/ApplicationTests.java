@@ -38,6 +38,7 @@ class ApplicationTests {
 
     @Test
     public void testConsumeEvents() {
+
         log.info("testConsumeEvents method execution started...");
         EmployeeDetails employeeDetails = new EmployeeDetails(263, "Karthik", "Kumar", "TW");
         kafkaTemplate.send("quickstart-4", employeeDetails);
